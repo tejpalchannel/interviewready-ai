@@ -1,199 +1,306 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Redirect after 1 seconds -->
-    <meta http-equiv="refresh" content="1; url=https://interviewready-ai.bolt.host/" />
+  <title>QA Interview Prep</title>
 
-    <title>QA Interview Prep — Redirecting…</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-    <style>
-      * {
-        box-sizing: border-box;
-      }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      line-height: 1.6;
+    }
 
-      body {
-        margin: 0;
-        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-        background: #f8fafc;
-        color: #0f172a;
-        line-height: 1.6;
-      }
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 24px;
+    }
 
-      .container {
-        max-width: 1080px;
-        margin: 0 auto;
-        padding: 24px;
-      }
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+    }
 
-      header {
-        background: #ffffff;
-        border-bottom: 1px solid #e2e8f0;
-      }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+    }
 
-      .header-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 18px 0;
-      }
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0f766e;
+    }
 
-      .logo {
-        font-size: 20px;
-        font-weight: 800;
-        color: #0f766e;
-      }
+    .logo span {
+      color: #2563eb;
+    }
 
-      .logo span {
-        color: #2563eb;
-      }
+    .redirect-text {
+      font-size: 14px;
+      color: #64748b;
+    }
 
-      .redirect-text {
-        font-size: 14px;
-        color: #64748b;
+    .hero {
+      padding: 64px 0 48px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #ccfbf1;
+      color: #0f766e;
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 42px;
+      line-height: 1.15;
+      margin: 22px 0 16px;
+      letter-spacing: -1px;
+    }
+
+    .highlight {
+      color: #2563eb;
+    }
+
+    .hero p {
+      max-width: 640px;
+      margin: 0 auto;
+      color: #475569;
+      font-size: 18px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 14px 30px;
+      background: #2563eb;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 10px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 40px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 30px;
+      margin: 0 0 10px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #64748b;
+      max-width: 620px;
+      margin: 0 auto 32px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .card p {
+      margin: 0;
+      color: #64748b;
+      font-size: 15px;
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: #eff6ff;
+      color: #2563eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+
+    footer {
+      border-top: 1px solid #e2e8f0;
+      padding: 24px 0;
+      text-align: center;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    @media (max-width: 640px) {
+      h1 {
+        font-size: 30px;
       }
 
       .hero {
-        padding: 64px 0 48px;
-        text-align: center;
+        padding: 44px 0 36px;
       }
 
-      .badge {
-        display: inline-block;
-        background: #ccfbf1;
-        color: #0f766e;
-        padding: 7px 14px;
-        border-radius: 999px;
-        font-size: 13px;
-        font-weight: 700;
+      .header-inner {
+        flex-direction: column;
+        gap: 6px;
       }
+    }
+  </style>
+</head>
 
-      h1 {
-        font-size: 42px;
-        line-height: 1.15;
-        margin: 22px 0 16px;
-        letter-spacing: -1px;
-      }
+<body>
 
-      .highlight {
-        color: #2563eb;
-      }
-
-      .hero p {
-        max-width: 640px;
-        margin: 0 auto;
-        color: #475569;
-        font-size: 18px;
-      }
-
-      section {
-        padding: 40px 0;
-      }
-
-      .section-title {
-        text-align: center;
-        font-size: 30px;
-        margin: 0 0 10px;
-      }
-
-      .section-subtitle {
-        text-align: center;
-        color: #64748b;
-        max-width: 620px;
-        margin: 0 auto 32px;
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 18px;
-      }
-
-      .card {
-        background: #ffffff;
-        border: 1px solid #e2e8f0;
-        border-radius: 16px;
-        padding: 24px;
-      }
-
-      .card h3 {
-        margin: 0 0 8px;
-        font-size: 18px;
-      }
-
-      .card p {
-        margin: 0;
-        color: #64748b;
-        font-size: 15px;
-      }
-
-      .icon {
-        width: 42px;
-        height: 42px;
-        border-radius: 12px;
-        background: #eff6ff;
-        color: #2563eb;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-        margin-bottom: 14px;
-      }
-
-      footer {
-        border-top: 1px solid #e2e8f0;
-        padding: 24px 0;
-        text-align: center;
-        color: #64748b;
-        font-size: 14px;
-      }
-
-      @media (max-width: 640px) {
-        h1 {
-          font-size: 30px;
-        }
-
-        .hero {
-          padding: 44px 0 36px;
-        }
-
-        .header-inner {
-          flex-direction: column;
-          gap: 6px;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <header>
-      <div class="container header-inner">
-        <div class="logo">
-          QA<span>Prep</span>
-        </div>
-
-        <div class="redirect-text">
-          Redirecting in <span id="countdown">1</span>…
-        </div>
+  <header>
+    <div class="container header-inner">
+      <div class="logo">
+        QA<span>Prep</span>
       </div>
-    </header>
 
-    <main>
-      <section class="hero">
-        <div class="container">
-          <span class="badge">
-            QA & Test Automation Interview Preparation
+      <div class="redirect-text">
+        QA Interview Preparation Platform
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container">
+
+        <span class="badge">
+          QA & Test Automation Interview Preparation
+        </span>
+
+        <h1>
+          Master your QA interviews.
+          <span class="highlight">
+            Build a brighter career.
           </span>
+        </h1>
 
-          <h1>
-            Master your QA interviews.
-            <span class="highlight">
-              Build a brighter career.
-            </span>
-          </h1>
+        <p>
+          Practice interview questions, strengthen your automation skills,
+          take assessments, and prepare for your next QA and Test Automation role.
+        </p>
 
-          <p>
-            Practice interview questions, strengthen your automation skills,
-            take
+        <a
+          href="https://interviewready-ai.bolt.host/"
+          class="cta-button"
+          rel="noopener noreferrer"
+        >
+          Open QA Interview Prep →
+        </a>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <h2 class="section-title">
+          Prepare for Your Next QA Opportunity
+        </h2>
+
+        <p class="section-subtitle">
+          Build confidence with practical interview preparation
+          and essential software testing concepts.
+        </p>
+
+        <div class="grid">
+
+          <div class="card">
+            <div class="icon">💻</div>
+            <h3>QA Interview Questions</h3>
+            <p>
+              Practice software testing fundamentals, manual testing,
+              and advanced QA interview questions.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">⚙️</div>
+            <h3>Automation Testing</h3>
+            <p>
+              Strengthen your knowledge of Selenium, Playwright,
+              frameworks, locators, and automation concepts.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🤖</div>
+            <h3>AI-Powered Preparation</h3>
+            <p>
+              Explore modern AI-assisted interview preparation
+              and improve your technical understanding.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">📊</div>
+            <h3>Assess Your Skills</h3>
+            <p>
+              Test your knowledge, identify learning gaps,
+              and improve your interview readiness.
+            </p>
+          </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <a
+            href="https://interviewready-ai.bolt.host/"
+            class="cta-button"
+            rel="noopener noreferrer"
+          >
+            Start Your QA Interview Preparation →
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 InterviewReady AI | Powered by Automation Tech Guru
+    </div>
+  </footer>
+
+</body>
+</html>
