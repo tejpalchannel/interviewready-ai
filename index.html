@@ -1,44 +1,19 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<title>InterviewReady AI</title>
-
-<meta
-  name="description"
-  content="Prepare for QA and Test Automation interviews with InterviewReady AI."
-/>
-
-<meta property="og:type" content="website" />
-<meta property="og:title" content="InterviewReady AI" />
-<meta
-  property="og:description"
-  content="Prepare for QA and Test Automation interviews with InterviewReady AI."
-/>
-<meta
-  property="og:url"
-  content="https://tejpalchannel.github.io/interviewready-ai/"
-/>
-<meta
-  property="og:image"
-  content="https://tejpalchannel.github.io/interviewready-ai/preview.png"
-/>
-<meta
-  property="og:image:alt"
-  content="InterviewReady AI — QA and Test Automation interview preparation"
-/>
   <title>InterviewReady AI</title>
+  <meta name="description" content="Prepare for QA and Test Automation interviews with InterviewReady AI." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="InterviewReady AI" />
+  <meta property="og:description" content="Prepare for QA and Test Automation interviews with InterviewReady AI." />
+  <meta property="og:url" content="https://tejpalchannel.github.io/interviewready-ai/" />
+  <meta property="og:image" content="https://tejpalchannel.github.io/interviewready-ai/preview.png" />
+  <meta property="og:image:alt" content="InterviewReady AI — QA and Test Automation interview preparation" />
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -46,45 +21,52 @@
       color: #0f172a;
       line-height: 1.6;
     }
+    .container { max-width: 1080px; margin: 0 auto; padding: 24px; }
 
-    .container {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 24px;
-    }
-
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid #e2e8f0;
-    }
-
+    header { background: #ffffff; border-bottom: 1px solid #e2e8f0; }
     .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 18px 0;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 18px 24px;
     }
+    .logo { font-size: 20px; font-weight: 800; color: #000000; }
+    .logo span { color: #2563eb; }
+    .redirect-text { font-size: 14px; color: #64748b; }
 
-    .logo {
-  font-size: 20px;
-  font-weight: 800;
-  color: #000000;
-}
-
-.logo span {
-  color: #2563eb;
-}
-
-    .redirect-text {
-      font-size: 14px;
+    nav.tabs {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav.tabs .container {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding: 0 24px;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      padding: 14px 16px;
+      font-size: 15px;
+      font-weight: 600;
       color: #64748b;
+      cursor: pointer;
+      white-space: nowrap;
     }
+    .tab-btn:hover { color: #2563eb; }
+    .tab-btn.active { color: #2563eb; border-bottom-color: #2563eb; }
 
-    .hero {
-      padding: 64px 0 48px;
-      text-align: center;
-    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
 
+    .hero { padding: 64px 0 48px; text-align: center; }
     .badge {
       display: inline-block;
       background: #ccfbf1;
@@ -94,18 +76,9 @@
       font-size: 13px;
       font-weight: 700;
     }
-
-    h1 {
-      font-size: 42px;
-      line-height: 1.15;
-      margin: 22px 0 16px;
-      letter-spacing: -1px;
-    }
-
-    .highlight {
-      color: #2563eb;
-    }
-
+    h1 { font-size: 42px; line-height: 1.15; margin: 22px 0 16px; letter-spacing: -1px; }
+    h2.page-title { font-size: 32px; margin: 8px 0 10px; }
+    .highlight { color: #2563eb; }
     .hero p {
       max-width: 640px;
       margin: 0 auto;
@@ -125,52 +98,37 @@
       border-radius: 10px;
       transition: background 0.3s ease, transform 0.3s ease;
     }
+    .cta-button:hover { background: #1d4ed8; transform: translateY(-2px); }
 
-    .cta-button:hover {
-      background: #1d4ed8;
-      transform: translateY(-2px);
-    }
-
-    section {
-      padding: 40px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 30px;
-      margin: 0 0 10px;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      color: #64748b;
-      max-width: 620px;
-      margin: 0 auto 32px;
-    }
+    section.block { padding: 40px 0; }
+    .section-title { text-align: center; font-size: 30px; margin: 0 0 10px; }
+    .section-subtitle { text-align: center; color: #64748b; max-width: 620px; margin: 0 auto 32px; }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 18px;
     }
-
     .card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 16px;
       padding: 24px;
     }
-
-    .card h3 {
-      margin: 0 0 8px;
-      font-size: 18px;
-    }
-
-    .card p {
-      margin: 0;
-      color: #64748b;
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .card p { margin: 0 0 12px; color: #64748b; font-size: 15px; }
+    .card .price { font-size: 22px; font-weight: 800; color: #0f172a; margin: 8px 0 14px; }
+    .card .btn-small {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #2563eb;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 8px;
       font-size: 15px;
     }
+    .card .btn-small:hover { background: #1d4ed8; }
 
     .icon {
       width: 42px;
@@ -185,6 +143,28 @@
       margin-bottom: 14px;
     }
 
+    .prose {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 32px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .prose h3 { margin: 24px 0 8px; font-size: 19px; }
+    .prose h3:first-child { margin-top: 0; }
+    .prose p, .prose li { color: #334155; font-size: 15px; }
+    .prose ul { padding-left: 20px; }
+    .updated { color: #64748b; font-size: 14px; }
+
+    .contact-box { display: grid; gap: 14px; }
+    .contact-item {
+      background: #eff6ff;
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+    .contact-item strong { display: block; margin-bottom: 2px; }
+
     footer {
       border-top: 1px solid #e2e8f0;
       padding: 24px 0;
@@ -192,20 +172,14 @@
       color: #64748b;
       font-size: 14px;
     }
+    footer nav a { color: #2563eb; text-decoration: none; margin: 0 8px; }
+    footer nav a:hover { text-decoration: underline; }
 
     @media (max-width: 640px) {
-      h1 {
-        font-size: 30px;
-      }
-
-      .hero {
-        padding: 44px 0 36px;
-      }
-
-      .header-inner {
-        flex-direction: column;
-        gap: 6px;
-      }
+      h1 { font-size: 30px; }
+      h2.page-title { font-size: 26px; }
+      .hero { padding: 44px 0 36px; }
+      .prose { padding: 22px; }
     }
   </style>
 </head>
@@ -213,121 +187,234 @@
 <body>
 
   <header>
-    <div class="container header-inner">
-      <div class="logo">
-        InterviewReady<span> AI</span>
-      </div>
-
-      <div class="redirect-text">
-        QA Interview Preparation Platform
-      </div>
+    <div class="header-inner">
+      <div class="logo">InterviewReady<span> AI</span></div>
+      <div class="redirect-text">QA Interview Preparation Platform</div>
     </div>
   </header>
 
+  <nav class="tabs">
+    <div class="container">
+      <button class="tab-btn active" data-tab="home">Home</button>
+      <button class="tab-btn" data-tab="products">Products</button>
+      <button class="tab-btn" data-tab="returns">Return Policy</button>
+      <button class="tab-btn" data-tab="contact">Contact</button>
+      <button class="tab-btn" data-tab="terms">Terms &amp; Privacy</button>
+    </div>
+  </nav>
+
   <main>
 
-    <section class="hero">
-      <div class="container">
-
-        <span class="badge">
-          QA & Test Automation Interview Preparation
-        </span>
-
-        <h1>
-          Master your QA interviews.
-          <span class="highlight">
-            Build a brighter career.
-          </span>
-        </h1>
-
-        <p>
-          Practice interview questions, strengthen your automation skills,
-          take assessments, and prepare for your next QA and Test Automation role.
-        </p>
-
-        <a
-          href="https://interviewready-ai.bolt.host/"
-          class="cta-button"
-          rel="noopener noreferrer"
-        >
-          Open QA Interview Prep →
-        </a>
-
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-
-        <h2 class="section-title">
-          Prepare for Your Next QA Opportunity
-        </h2>
-
-        <p class="section-subtitle">
-          Build confidence with practical interview preparation
-          and essential software testing concepts.
-        </p>
-
-        <div class="grid">
-
-          <div class="card">
-            <div class="icon">💻</div>
-            <h3>QA Interview Questions</h3>
-            <p>
-              Practice software testing fundamentals, manual testing,
-              and advanced QA interview questions.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="icon">⚙️</div>
-            <h3>Automation Testing</h3>
-            <p>
-              Strengthen your knowledge of Selenium, Playwright,
-              frameworks, locators, and automation concepts.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="icon">🤖</div>
-            <h3>AI-Powered Preparation</h3>
-            <p>
-              Explore modern AI-assisted interview preparation
-              and improve your technical understanding.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="icon">📊</div>
-            <h3>Assess Your Skills</h3>
-            <p>
-              Test your knowledge, identify learning gaps,
-              and improve your interview readiness.
-            </p>
-          </div>
-
+    <!-- HOME TAB -->
+    <div class="tab-panel active" id="home">
+      <section class="hero">
+        <div class="container">
+          <span class="badge">QA &amp; Test Automation Interview Preparation</span>
+          <h1>Master your QA interviews. <span class="highlight">Build a brighter career.</span></h1>
+          <p>Practice interview questions, strengthen your automation skills, take assessments, and prepare for your next QA and Test Automation role.</p>
+          <a href="https://interviewready-ai.bolt.host/" class="cta-button" rel="noopener noreferrer">Open QA Interview Prep →</a>
         </div>
+      </section>
 
-        <div style="text-align: center; margin-top: 40px;">
-          <a
-            href="https://interviewready-ai.bolt.host/"
-            class="cta-button"
-            rel="noopener noreferrer"
-          >
-            Start Your QA Interview Preparation →
-          </a>
+      <section class="block">
+        <div class="container">
+          <h2 class="section-title">Prepare for Your Next QA Opportunity</h2>
+          <p class="section-subtitle">Build confidence with practical interview preparation and essential software testing concepts.</p>
+          <div class="grid">
+            <div class="card">
+              <div class="icon">💻</div>
+              <h3>QA Interview Questions</h3>
+              <p>Practice software testing fundamentals, manual testing, and advanced QA interview questions.</p>
+            </div>
+            <div class="card">
+              <div class="icon">⚙️</div>
+              <h3>Automation Testing</h3>
+              <p>Strengthen your knowledge of Selenium, Playwright, frameworks, locators, and automation concepts.</p>
+            </div>
+            <div class="card">
+              <div class="icon">🤖</div>
+              <h3>AI-Powered Preparation</h3>
+              <p>Explore modern AI-assisted interview preparation and improve your technical understanding.</p>
+            </div>
+            <div class="card">
+              <div class="icon">📊</div>
+              <h3>Assess Your Skills</h3>
+              <p>Test your knowledge, identify learning gaps, and improve your interview readiness.</p>
+            </div>
+          </div>
+          <div style="text-align: center; margin-top: 40px;">
+            <a href="https://interviewready-ai.bolt.host/" class="cta-button" rel="noopener noreferrer">Start Your QA Interview Preparation →</a>
+          </div>
         </div>
+      </section>
+    </div>
 
-      </div>
-    </section>
+    <!-- PRODUCTS TAB -->
+    <div class="tab-panel" id="products">
+      <section class="block">
+        <div class="container">
+          <h2 class="section-title">Our Products</h2>
+          <p class="section-subtitle">Digital resources and interview preparation tools for QA and SDET professionals.</p>
+          <div class="grid">
+              <div class="card">
+                  <div class="icon">📘</div>
+                  <h3>110+ Advance Interview Questions &amp; Answers: Playwright</h3>
+                  <p>110 real-world Playwright interview questions with detailed answers and C#/.NET code examples. 90+ page PDF with instant download.</p>
+                  <div class="price">$9.99</div>
+                  <a href="https://payhip.com/b/gELc9" class="btn-small" rel="noopener noreferrer">Buy Now</a>
+              </div>
+              <div class="card">
+                  <div class="icon">📘</div>
+                  <h3>100+ Advance Interview Questions &amp; Answers: Selenium</h3>
+                  <p>100 real-world Selenium interview questions with detailed answers and C#/.NET code examples. 90+ page PDF with instant download.</p>
+                  <div class="price">$9.99</div>
+                  <a href="https://payhip.com/b/XpScI" class="btn-small" rel="noopener noreferrer">Buy Now</a>
+              </div>
+              <div class="card">
+                  <div class="icon">📘</div>
+                  <h3>Enterprise Rest API Automation Master Guide</h3>
+                  <p>
+                      Build a scalable, reliable, and CI/CD-ready REST API automation solution for enterprise applications. You will get the following files:
+                      1. DOCX. 2. XLSX. 3. PDF with instant download.
+                  </p>
+                  <div class="price">$22.00</div>
+                  <a href="https://payhip.com/b/8jFz2" class="btn-small" rel="noopener noreferrer">Buy Now</a>
+              </div>
+              <div class="card">
+                  <div class="icon">📘</div>
+                  <h3>Selenium to Playwright Python — Complete Migration Guide</h3>
+                  <p>
+                      Moving from Selenium to Playwright is more than replacing one automation command with another. You will get PDF with instant download.
+                  </p>
+                  <div class="price">$32.00</div>
+                  <a href="https://payhip.com/b/OgBmG" class="btn-small" rel="noopener noreferrer">Buy Now</a>
+              </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- RETURN POLICY TAB -->
+    <div class="tab-panel" id="returns">
+      <section class="block">
+        <div class="container">
+          <div class="prose">
+            <h2 class="page-title">Return &amp; Refund Policy</h2>
+            <p class="updated">Last updated: [DATE]</p>
+
+            <h3>Digital products</h3>
+            <p>All digital products, including PDF guides, are delivered instantly after purchase. Because they are digital downloads, [all sales are final / we offer a refund within X days of purchase if the file cannot be opened or is materially different from its description].</p>
+
+            <h3>Mock interview plans and bookings</h3>
+            <p>Subscription fees are [non-refundable / refundable within X days]. Mock interview sessions can be rescheduled or cancelled at least [48] hours before the scheduled time. Sessions cancelled with less notice may not be eligible for a credit or refund.</p>
+
+            <h3>How to request a refund</h3>
+            <p>To request a refund, email us at <a href="mailto:[your-business-email]">[your-business-email]</a> with your order number, the product name, and the reason for your request. We will respond within [X] business days.</p>
+
+            <h3>Processing time</h3>
+            <p>Approved refunds are processed within [X] business days to your original payment method. Your bank or card provider may take additional time to post the credit.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- CONTACT TAB -->
+    <div class="tab-panel" id="contact">
+      <section class="block">
+        <div class="container">
+          <div class="prose">
+            <h2 class="page-title">Contact Us</h2>
+            <p>Questions about a product, a mock interview booking, or an order? Reach out and we'll get back to you.</p>
+            <div class="contact-box">
+              <div class="contact-item">
+                <strong>Business name</strong>
+                InterviewReady AI
+              </div>
+              <div class="contact-item">
+                <strong>Email</strong>
+                <a href="mailto:[your-business-email]">[your-business-email]</a>
+              </div>
+              <div class="contact-item">
+                <strong>Phone / WhatsApp</strong>
+                [your-phone-number]
+              </div>
+              <div class="contact-item">
+                <strong>Business address</strong>
+                [your-business-address]
+              </div>
+              <div class="contact-item">
+                <strong>Response time</strong>
+                We typically respond within [X] business days.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- TERMS & PRIVACY TAB -->
+    <div class="tab-panel" id="terms">
+      <section class="block">
+        <div class="container">
+          <div class="prose">
+            <h2 class="page-title">Terms of Service &amp; Privacy Policy</h2>
+            <p class="updated">Last updated: [DATE]</p>
+
+            <h3>Terms of service</h3>
+            <p>By using InterviewReady AI or purchasing our products, you agree to these terms. Digital products are licensed for your personal use only and may not be resold, redistributed, or shared. Mock interview sessions are provided for educational purposes and do not guarantee employment outcomes.</p>
+
+            <h3>Information we collect</h3>
+            <p>We collect the information you provide when you create an account, book a session, make a purchase, or contact us, such as your name, email address, and payment details. Payments are processed by our payment providers, and we do not store full card numbers.</p>
+
+            <h3>How we use your information</h3>
+            <p>We use your information to deliver products and services, process orders and bookings, respond to your questions, and improve our platform. We do not sell your personal information.</p>
+
+            <h3>Cookies and analytics</h3>
+            <p>Our site may use cookies to remember preferences and measure traffic. You can disable cookies in your browser settings, though some features may not work as intended.</p>
+
+            <h3>Contact about privacy</h3>
+            <p>For privacy questions or to request deletion of your data, email <a href="mailto:[your-business-email]">[your-business-email]</a>.</p>
+          </div>
+        </div>
+      </section>
+    </div>
 
   </main>
 
   <footer>
     <div class="container">
-      © 2026 InterviewReady AI | Powered by Automation Tech Guru
+      <p>© 2026 InterviewReady AI</p>
+      <nav>
+        <a href="#" data-tab="returns">Return Policy</a>
+        <a href="#" data-tab="contact">Contact</a>
+        <a href="#" data-tab="terms">Terms &amp; Privacy</a>
+      </nav>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var buttons = document.querySelectorAll('[data-tab]');
+      var panels = document.querySelectorAll('.tab-panel');
+
+      function showTab(name) {
+        panels.forEach(function (p) {
+          p.classList.toggle('active', p.id === name);
+        });
+        document.querySelectorAll('nav.tabs .tab-btn').forEach(function (b) {
+          b.classList.toggle('active', b.getAttribute('data-tab') === name);
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          showTab(btn.getAttribute('data-tab'));
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
