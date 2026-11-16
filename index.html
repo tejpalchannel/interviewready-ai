@@ -13,21 +13,19 @@
     gtag('config', 'G-V4VGNZWVB2');
   </script>
 
-  <title>InterviewReady AI: QA and Test Automation Interview Prep</title>
-  <meta name="description" content="Practice QA and test automation interview questions, Selenium and Playwright topics, and skills assessments to get ready for your next testing role." />
+  <title>InterviewReady AI: Free Selenium and QA Interview Questions</title>
+  <meta name="description" content="Read free QA and Selenium interview questions with clear answers, then take the full 10-question quiz. Get ready for your next test automation role." />
   <link rel="canonical" href="https://tejpalchannel.github.io/interviewready-ai/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="InterviewReady AI" />
-  <meta property="og:description" content="Prepare for QA and Test Automation interviews with InterviewReady AI." />
+  <meta property="og:description" content="Free QA and Selenium interview questions, plus a 10-question quiz to test yourself." />
   <meta property="og:url" content="https://tejpalchannel.github.io/interviewready-ai/" />
   <meta property="og:image" content="https://tejpalchannel.github.io/interviewready-ai/preview.png" />
   <meta property="og:image:alt" content="InterviewReady AI — QA and Test Automation interview preparation" />
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -37,43 +35,38 @@
       line-height: 1.6;
     }
 
-    .container {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 24px;
-    }
+    .container { max-width: 1080px; margin: 0 auto; padding: 24px; }
 
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid #e2e8f0;
-    }
+    header { background: #ffffff; border-bottom: 1px solid #e2e8f0; }
 
     .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 18px 0;
+      padding: 18px 24px;
     }
 
-    .logo {
-      font-size: 20px;
-      font-weight: 800;
-      color: #000000;
-    }
+    .logo { font-size: 20px; font-weight: 800; color: #000000; }
+    .logo span { color: #2563eb; }
 
-    .logo span {
-      color: #2563eb;
-    }
+    .header-actions { display: flex; align-items: center; gap: 10px; }
 
-    .redirect-text {
+    .btn-outline, .btn-solid {
+      display: inline-block;
+      padding: 9px 18px;
+      border-radius: 8px;
       font-size: 14px;
-      color: #64748b;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease;
     }
 
-    .hero {
-      padding: 64px 0 48px;
-      text-align: center;
-    }
+    .btn-outline { color: #2563eb; border: 1px solid #2563eb; background: #ffffff; }
+    .btn-outline:hover { background: #eff6ff; }
+    .btn-solid { color: #ffffff; background: #2563eb; border: 1px solid #2563eb; }
+    .btn-solid:hover { background: #1d4ed8; }
+
+    .hero { padding: 64px 0 48px; text-align: center; }
 
     .badge {
       display: inline-block;
@@ -92,9 +85,7 @@
       letter-spacing: -1px;
     }
 
-    .highlight {
-      color: #2563eb;
-    }
+    .highlight { color: #2563eb; }
 
     .hero p {
       max-width: 640px;
@@ -116,20 +107,21 @@
       transition: background 0.3s ease, transform 0.3s ease;
     }
 
-    .cta-button:hover {
-      background: #1d4ed8;
-      transform: translateY(-2px);
+    .cta-button:hover { background: #1d4ed8; transform: translateY(-2px); }
+
+    .cta-secondary {
+      display: inline-block;
+      margin-top: 14px;
+      color: #2563eb;
+      font-weight: 600;
+      text-decoration: none;
     }
 
-    section {
-      padding: 40px 0;
-    }
+    .trust-line { margin-top: 14px; font-size: 14px; color: #64748b; }
 
-    .section-title {
-      text-align: center;
-      font-size: 30px;
-      margin: 0 0 10px;
-    }
+    section { padding: 40px 0; }
+
+    .section-title { text-align: center; font-size: 30px; margin: 0 0 10px; }
 
     .section-subtitle {
       text-align: center;
@@ -137,6 +129,41 @@
       max-width: 620px;
       margin: 0 auto 32px;
     }
+
+    .qa-list { max-width: 760px; margin: 0 auto; }
+
+    .qa-item {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      padding: 18px 22px;
+    }
+
+    .qa-item summary {
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 17px;
+      color: #0f172a;
+    }
+
+    .qa-item p { margin: 12px 0 0; color: #475569; }
+
+    .qa-more { text-align: center; margin-top: 24px; }
+
+    .quiz-band {
+      background: #0f172a;
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 40px 28px;
+      text-align: center;
+    }
+
+    .quiz-band h2 { margin: 0 0 10px; font-size: 28px; }
+    .quiz-band p { margin: 0 auto; max-width: 560px; color: #cbd5e1; }
+
+    .quiz-band .cta-button { background: #14b8a6; color: #0f172a; }
+    .quiz-band .cta-button:hover { background: #2dd4bf; }
 
     .grid {
       display: grid;
@@ -151,16 +178,8 @@
       padding: 24px;
     }
 
-    .card h3 {
-      margin: 0 0 8px;
-      font-size: 18px;
-    }
-
-    .card p {
-      margin: 0;
-      color: #64748b;
-      font-size: 15px;
-    }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .card p { margin: 0; color: #64748b; font-size: 15px; }
 
     .icon {
       width: 42px;
@@ -183,116 +202,141 @@
       font-size: 14px;
     }
 
+    footer a { color: #2563eb; }
+
     @media (max-width: 640px) {
-      h1 {
-        font-size: 30px;
-      }
-
-      .hero {
-        padding: 44px 0 36px;
-      }
-
-      .header-inner {
-        flex-direction: column;
-        gap: 6px;
-      }
+      h1 { font-size: 30px; }
+      .hero { padding: 44px 0 36px; }
+      .header-inner { flex-direction: column; gap: 12px; }
+      .quiz-band h2 { font-size: 24px; }
     }
-    .header-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.btn-outline,
-.btn-solid {
-  display: inline-block;
-  padding: 9px 18px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.2s ease;
-}
-
-.btn-outline {
-  color: #2563eb;
-  border: 1px solid #2563eb;
-  background: #ffffff;
-}
-
-.btn-outline:hover {
-  background: #eff6ff;
-}
-
-.btn-solid {
-  color: #ffffff;
-  background: #2563eb;
-  border: 1px solid #2563eb;
-}
-
-.btn-solid:hover {
-  background: #1d4ed8;
-}
   </style>
 </head>
 
 <body>
 
   <header>
-  <div class="container header-inner">
-    <div class="logo">
-      InterviewReady<span> AI</span>
-    </div>
+    <div class="header-inner">
+      <div class="logo">InterviewReady<span> AI</span></div>
 
-    <nav class="header-actions">
-      <a href="https://interviewready-ai.bolt.host/" class="btn-outline" rel="noopener noreferrer">Login</a>
-      <a href="https://interviewready-ai.bolt.host/" class="btn-solid" rel="noopener noreferrer">Sign Up</a>
-    </nav>
-  </div>
-</header>
+      <nav class="header-actions">
+        <a href="https://interviewready-ai.bolt.host/" class="btn-outline" rel="noopener noreferrer">Login</a>
+        <a href="https://interviewready-ai.bolt.host/" class="btn-solid" rel="noopener noreferrer">Sign Up</a>
+      </nav>
+    </div>
+  </header>
 
   <main>
 
     <section class="hero">
       <div class="container">
 
-        <span class="badge">
-          QA & Test Automation Interview Preparation
-        </span>
+        <span class="badge">Free QA &amp; Test Automation Interview Prep</span>
 
         <h1>
-          Master your QA interviews.
-          <span class="highlight">
-            Build a brighter career.
-          </span>
+          Ace your next QA interview.
+          <span class="highlight">Start with 5 free questions.</span>
         </h1>
 
         <p>
-          Practice interview questions, strengthen your automation skills,
-          take assessments, and prepare for your next QA and Test Automation role.
+          Read clear answers to the questions testing interviewers ask most, then
+          test yourself with a 10-question quiz.
         </p>
 
-        <a
-          href="https://interviewready-ai.bolt.host/"
-          class="cta-button"
-          rel="noopener noreferrer"
-        >
-          Open QA Interview Prep →
-        </a>
+        <a href="#free-qa" class="cta-button">Read the free questions ↓</a>
+        <br />
+        <a href="https://interviewready-ai.bolt.host/" class="cta-secondary" rel="noopener noreferrer">Take the full 10-question quiz →</a>
+
+        <p class="trust-line">Free to read. The quiz is free with a quick account.</p>
+
+      </div>
+    </section>
+
+    <section id="free-qa">
+      <div class="container">
+
+        <h2 class="section-title">Free Selenium Interview Questions</h2>
+        <p class="section-subtitle">
+          Short, clear answers you can read in a minute. Open a question to see the answer.
+        </p>
+
+        <div class="qa-list">
+
+          <details class="qa-item">
+            <summary>What is the difference between findElement and findElements?</summary>
+            <p>
+              findElement returns the first matching element and throws NoSuchElementException
+              if none is found. findElements returns a list of all matching elements, or an
+              empty list if none are found, so it's safer when an element may not exist.
+            </p>
+          </details>
+
+          <details class="qa-item">
+            <summary>What is the difference between absolute and relative XPath?</summary>
+            <p>
+              Absolute XPath starts from the root, such as /html/body/div[2]/form/input, and
+              breaks whenever the page structure changes. Relative XPath starts anywhere, such
+              as //input[@id='username'], and is more stable, so testers prefer it.
+            </p>
+          </details>
+
+          <details class="qa-item">
+            <summary>What is the difference between implicit and explicit waits?</summary>
+            <p>
+              An implicit wait applies to every element lookup for the whole session. An
+              explicit wait pauses only for a specific condition, such as an element becoming
+              clickable, and it's usually the better choice because it's more precise.
+            </p>
+          </details>
+
+          <details class="qa-item">
+            <summary>What is the Page Object Model (POM)?</summary>
+            <p>
+              POM represents each web page as a class that holds its locators and actions.
+              Tests call those methods instead of locators directly, so when the UI changes,
+              you update one class, not every test.
+            </p>
+          </details>
+
+          <details class="qa-item">
+            <summary>How do you handle a JavaScript alert in Selenium?</summary>
+            <p>
+              Switch to it with driver.switchTo().alert(), then call accept() to click OK,
+              dismiss() to click Cancel, or sendKeys() to type into a prompt, and use getText()
+              to read the message.
+            </p>
+          </details>
+
+        </div>
+
+        <div class="qa-more">
+          <a href="https://tejpalchannel.github.io/interviewready-ai/selenium-interview-questions.html" class="btn-outline">See all 10 Selenium questions</a>
+        </div>
 
       </div>
     </section>
 
     <section>
       <div class="container">
+        <div class="quiz-band">
+          <h2>Think you're ready? Find out in 10 questions.</h2>
+          <p>
+            Take the full quiz to see where you're strong and what to review before your interview.
+            It's free. Sign up in under a minute.
+          </p>
+          <div style="margin-top: 24px;">
+            <a href="https://interviewready-ai.bolt.host/" class="cta-button" rel="noopener noreferrer">Start the 10-question quiz →</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <h2 class="section-title">
-          Prepare for Your Next QA Opportunity
-        </h2>
+    <section>
+      <div class="container">
 
+        <h2 class="section-title">Everything You Need for Your Next QA Role</h2>
         <p class="section-subtitle">
-          Build confidence with practical interview preparation
-          and essential software testing concepts.
+          Build confidence with practical interview preparation and core testing concepts.
         </p>
 
         <div class="grid">
@@ -300,61 +344,41 @@
           <div class="card">
             <div class="icon">💻</div>
             <h3>QA Interview Questions</h3>
-            <p>
-              Practice software testing fundamentals, manual testing,
-              and advanced QA interview questions.
-            </p>
+            <p>Software testing fundamentals, manual testing, and advanced QA questions.</p>
           </div>
 
           <div class="card">
             <div class="icon">⚙️</div>
             <h3>Automation Testing</h3>
-            <p>
-              Strengthen your knowledge of Selenium, Playwright,
-              frameworks, locators, and automation concepts.
-            </p>
+            <p>Selenium, Playwright, frameworks, locators, and automation concepts.</p>
           </div>
 
           <div class="card">
             <div class="icon">🤖</div>
             <h3>AI-Powered Preparation</h3>
-            <p>
-              Explore modern AI-assisted interview preparation
-              and improve your technical understanding.
-            </p>
+            <p>AI-assisted practice that builds your technical understanding.</p>
           </div>
 
           <div class="card">
             <div class="icon">📊</div>
             <h3>Assess Your Skills</h3>
-            <p>
-              Test your knowledge, identify learning gaps,
-              and improve your interview readiness.
-            </p>
+            <p>Test your knowledge, find learning gaps, and track your readiness.</p>
           </div>
 
         </div>
 
         <div style="text-align: center; margin-top: 40px;">
-          <a
-            href="https://interviewready-ai.bolt.host/"
-            class="cta-button"
-            rel="noopener noreferrer"
-          >
-            Start Your QA Interview Preparation →
-          </a>
+          <a href="https://interviewready-ai.bolt.host/" class="cta-button" rel="noopener noreferrer">Start Your QA Interview Prep →</a>
         </div>
 
       </div>
     </section>
 
-  </main>
-
-  <footer>
-    <div class="container">
-      © 2026 InterviewReady AI | Powered by Automation Tech Guru
-    </div>
-  </footer>
-
-</body>
-</html>
+    <section>
+      <div class="container">
+        <h2 class="section-title">Practice More Topics</h2>
+        <p class="section-subtitle">Each guide has its own set of questions and answers.</p>
+        <div class="grid">
+          <div class="card"><h3><a href="https://tejpalchannel.github.io/interviewready-ai/playwright-interview-questions.html" style="color:#0f172a;">Playwright Interview Questions</a></h3><p>Locators, waits, and test structure.</p></div>
+          <div class="card"><h3><a href="https://tejpalchannel.github.io/interviewready-ai/api-testing-interview-questions.html" style="color:#0f172a;">API Testing Interview Questions</a></h3><p>Methods, status codes, and validation.</p></div>
+          <div
