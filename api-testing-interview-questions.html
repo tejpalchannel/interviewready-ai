@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="canonical" href="https://tejpalchannel.github.io/interviewready-ai/api-testing-interview-questions.html" />
 <title>Top 10 API Testing Interview Questions and Answers (2026)</title>
-<meta name="description" content="Most asked API testing interview questions with clear, short answers. Practice them free in InterviewReady AI."/>
+<meta name="description" content="Most asked API testing interview questions with clear answers on HTTP methods, status codes, authentication, PUT vs PATCH, and contract testing."/>
+<link rel="canonical" href="https://tejpalchannel.github.io/interviewready-ai/api-testing-interview-questions.html"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 body{background:#f6f7f9;color:#111827;line-height:1.6}
@@ -24,17 +24,27 @@ footer{margin-top:40px;font-size:12px;color:#9ca3af;text-align:center}
 <body>
 <div class="wrap">
 <h1>Top 10 API Testing Interview Questions and Answers (2026)</h1>
-<p class="intro">Most asked API testing interview questions with clear, short answers. Practice them free in InterviewReady AI.</p>
-<div class="qa"><h3>1. What is API testing?</h3><p>API testing checks whether APIs work correctly — verifying request/response, status codes, data, performance, and security — without a user interface.</p></div>
-<div class="qa"><h3>2. What is the difference between REST and SOAP?</h3><p>REST uses HTTP methods and JSON/XML, is lightweight and stateless. SOAP uses XML strictly with a defined protocol (WSDL), and is more rigid but has built-in security standards.</p></div>
-<div class="qa"><h3>3. What are the common HTTP methods?</h3><p>GET (read), POST (create), PUT (update/replace), PATCH (partial update), DELETE (remove).</p></div>
-<div class="qa"><h3>4. What is a status code?</h3><p>A status code tells the result of an HTTP request: 2xx success, 3xx redirect, 4xx client error, 5xx server error.</p></div>
-<div class="qa"><h3>5. What is the difference between 200 and 201?</h3><p>200 OK means the request succeeded. 201 Created means a new resource was successfully created (usually after POST).</p></div>
-<div class="qa"><h3>6. What is authentication vs authorization?</h3><p>Authentication verifies who you are (e.g., login, token). Authorization decides what you are allowed to do (e.g., admin vs user permissions).</p></div>
-<div class="qa"><h3>7. What is a Bearer token?</h3><p>A Bearer token (usually a JWT) is sent in the Authorization header to authenticate API requests: Authorization: Bearer &lt;token&gt;.</p></div>
-<div class="qa"><h3>8. What is the difference between PUT and PATCH?</h3><p>PUT replaces the entire resource with new data. PATCH updates only specific fields of the resource.</p></div>
-<div class="qa"><h3>9. How do you test an API?</h3><p>Send requests with tools like Postman or code, then verify status code, response body, headers, response time, and error handling for invalid inputs.</p></div>
-<div class="qa"><h3>10. What is API contract testing?</h3><p>Contract testing verifies that an API&#x27;s request/response structure matches what the consumer expects, ensuring services work together without breaking.</p></div>
+<p class="intro">API testing checks the services behind the user interface, so it often finds bugs earlier and runs faster than UI tests. Interviewers usually ask about HTTP methods, status codes, authentication, and how you decide what to assert. These answers explain the reasoning behind each choice, so you can describe how you would test a real endpoint.</p>
+
+<div class="qa"><h3>1. What is API testing?</h3><p>API testing checks that an application's interfaces work correctly without going through the user interface. It verifies the request and response, status codes, data accuracy, error handling, performance, and security. Because it skips the UI, it runs faster and fails more clearly than an end-to-end test of the same logic.</p></div>
+
+<div class="qa"><h3>2. What is the difference between REST and SOAP?</h3><p>REST uses standard HTTP methods and usually exchanges JSON, so it is lightweight and easy to read. SOAP uses XML messages with a formal contract described by WSDL, and it defines its own security and transaction standards. Most new public APIs are REST, while SOAP is still common in banking and older enterprise systems.</p></div>
+
+<div class="qa"><h3>3. What are the common HTTP methods?</h3><p>GET reads a resource and should not change data. POST creates a new resource, and PUT replaces an existing one. PATCH updates only some fields, and DELETE removes a resource. Knowing which methods should be safe or idempotent helps you decide what to retry and what to assert.</p></div>
+
+<div class="qa"><h3>4. What is a status code?</h3><p>A status code is the server's summary of the result of a request. 2xx means success, 3xx means a redirect, 4xx means the client sent something wrong, and 5xx means the server failed. A test should check the exact code it expects, not just that the response is not an error.</p></div>
+
+<div class="qa"><h3>5. What is the difference between 200 and 201?</h3><p>200 OK means the request succeeded and the response body contains the result. 201 Created means a new resource was created, usually after a POST, and the response often includes a Location header with the new resource's address. Asserting 201 rather than 200 confirms the resource was actually created.</p></div>
+
+<div class="qa"><h3>6. What is the difference between authentication and authorization?</h3><p>Authentication confirms who the caller is, for example by checking a password or a token. Authorization decides what that caller is allowed to do, such as whether a regular user can delete another user's record. A good test suite checks both, including the case where a valid user is refused an action they should not have.</p></div>
+
+<div class="qa"><h3>7. What is a Bearer token?</h3><p>A Bearer token is a credential sent in the Authorization header as Authorization: Bearer followed by the token. The server accepts whoever holds the token, so it must be sent only over HTTPS and kept out of logs. Tokens are often JWTs, which can be checked for expiry and signature.</p></div>
+
+<div class="qa"><h3>8. What is the difference between PUT and PATCH?</h3><p>PUT replaces the whole resource, so fields you leave out may be cleared or reset to defaults. PATCH changes only the fields you send and leaves the rest as they are. When testing, send a partial body to PATCH and check that the other fields did not change.</p></div>
+
+<div class="qa"><h3>9. How do you test an API?</h3><p>Start by reading the specification and listing each endpoint, its inputs, and its expected outputs. Send valid requests and check the status code, response body, headers, and response time. Then send invalid input, missing fields, and wrong credentials, and confirm the API returns clear errors without leaking internal details.</p></div>
+
+<div class="qa"><h3>10. What is API contract testing?</h3><p>Contract testing checks that the request and response shape agreed between a consumer and a provider still matches. The provider is tested against the consumer's expectations, so a change that would break a client fails the build early. It is useful in microservice systems, where many teams deploy independently.</p></div>
 
 <a class="cta" href="https://interviewready-ai.bolt.host/">Take the free API testing quiz →</a>
 <div class="chips"><a class="chip" href="https://tejpalchannel.github.io/interviewready-ai/selenium-interview-questions.html">Selenium Interview Questions and Answers</a><a class="chip" href="https://tejpalchannel.github.io/interviewready-ai/playwright-interview-questions.html">Playwright Interview Questions and Answers</a><a class="chip" href="https://tejpalchannel.github.io/interviewready-ai/java-interview-questions.html">Java Interview Questions for Automation Testers</a><a class="chip" href="https://tejpalchannel.github.io/interviewready-ai/cypress-interview-questions.html">Cypress Interview Questions and Answers</a></div>
