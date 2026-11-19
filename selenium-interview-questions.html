@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Top 10 Selenium Interview Questions and Answers (2026)  | InterviewReady AI</title>
-  <meta name="description" content="The 10 most asked Selenium interview questions with clear answers, covering WebDriver, XPath, waits, the Page Object Model, and alerts." />
-<link rel="canonical" href="https://tejpalchannel.github.io/interviewready-ai/selenium-interview-questions.html" />
+<title>Top 10 Selenium Interview Questions and Answers (2026) | InterviewReady AI</title>
+<meta name="description" content="The 10 most asked Selenium interview questions with clear answers, covering WebDriver, XPath, waits, the Page Object Model, and alerts."/>
+<link rel="canonical" href="https://tejpalchannel.github.io/interviewready-ai/selenium-interview-questions.html"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 body{background:#f6f7f9;color:#111827;line-height:1.6}
@@ -24,17 +24,27 @@ footer{margin-top:40px;font-size:12px;color:#9ca3af;text-align:center}
 <body>
 <div class="wrap">
 <h1>Top 10 Selenium Interview Questions and Answers (2026)</h1>
-<p class="intro">Preparing for a QA automation interview? These are the most commonly asked Selenium interview questions with short, clear answers. Practice them free in InterviewReady AI.</p>
-<div class="qa"><h3>1. What is Selenium?</h3><p>Selenium is an open-source tool used to automate web browsers. It supports multiple languages like Java, Python, and C#, and is mainly used for UI automation testing.</p></div>
-<div class="qa"><h3>2. What are the components of Selenium?</h3><p>Selenium has four components: Selenium IDE (record and playback), Selenium RC (deprecated), WebDriver (browser automation API), and Selenium Grid (parallel testing on multiple machines).</p></div>
-<div class="qa"><h3>3. What is Selenium WebDriver?</h3><p>WebDriver is the core of Selenium. It provides APIs to control browsers directly — open pages, click elements, type text, and read page content.</p></div>
-<div class="qa"><h3>4. What is the difference between findElement and findElements?</h3><p>findElement returns the first matching WebElement and throws NoSuchElementException if none is found. findElements returns a list of all matching elements, or an empty list if none are found.</p></div>
-<div class="qa"><h3>5. What is an XPath?</h3><p>XPath is a way to locate elements in an XML/HTML document using a path expression. It can find elements by attributes, text, or position, e.g., //input[@id=&#x27;username&#x27;].</p></div>
-<div class="qa"><h3>6. What is the difference between absolute and relative XPath?</h3><p>Absolute XPath starts from the root (/html/body/...) and breaks easily when the page changes. Relative XPath starts from anywhere (//tag[...]) and is more stable and preferred.</p></div>
-<div class="qa"><h3>7. What is a fluent wait in Selenium?</h3><p>FluentWait is a type of wait that polls the DOM at regular intervals until an element appears or a timeout is reached. It lets you ignore specific exceptions while waiting.</p></div>
-<div class="qa"><h3>8. What is the Page Object Model (POM)?</h3><p>POM is a design pattern where each web page is represented as a class, with its elements and actions. It makes test code reusable, readable, and easier to maintain.</p></div>
-<div class="qa"><h3>9. How do you handle dynamic elements in Selenium?</h3><p>Use dynamic XPath strategies such as contains(), starts-with(), or text() functions, and combine them with explicit waits so the script waits for the element to be ready.</p></div>
-<div class="qa"><h3>10. How do you handle pop-ups and alerts in Selenium?</h3><p>Use driver.switchTo().alert() to switch to JavaScript alerts, then accept(), dismiss(), or sendKeys(). For browser-level pop-ups, use browser options or third-party tools.</p></div>
+<p class="intro">Selenium is still the most requested UI automation tool in QA job descriptions. These questions cover the core concepts interviewers ask first: what Selenium is, how WebDriver locates elements, how to write stable XPath, how to wait correctly, and how to structure tests with the Page Object Model. Each answer gives the reason behind it, so you can explain your choice in an interview.</p>
+
+<div class="qa"><h3>1. What is Selenium?</h3><p>Selenium is an open-source tool for automating web browsers, mainly for UI regression testing. It supports Java, Python, C#, JavaScript, and other languages through language bindings. Tests written with Selenium drive a real browser, so they check what a user actually sees and clicks.</p></div>
+
+<div class="qa"><h3>2. What are the components of Selenium?</h3><p>Selenium has four components. Selenium IDE is a browser extension for record and playback, useful for quick demos but not for maintained suites. Selenium RC is deprecated and replaced by WebDriver. WebDriver is the API that controls the browser, and Selenium Grid runs tests in parallel across multiple machines or browsers.</p></div>
+
+<div class="qa"><h3>3. What is Selenium WebDriver?</h3><p>WebDriver is the core of Selenium and the API your test code calls. It opens pages, finds elements, clicks, types, reads text, and manages windows, frames, and alerts. Each browser has its own driver, such as ChromeDriver or GeckoDriver, which translates WebDriver commands into browser actions.</p></div>
+
+<div class="qa"><h3>4. What is the difference between findElement and findElements?</h3><p>findElement returns the first matching element and throws NoSuchElementException if nothing matches. findElements returns a list of every match, and an empty list if nothing matches. Use findElements when an element is optional, such as a cookie banner, because checking the list size avoids an exception.</p></div>
+
+<div class="qa"><h3>5. What is an XPath?</h3><p>XPath is a path expression for locating elements in the HTML document. You can match by attribute, such as //input[@id='username'], by visible text, such as //button[text()='Login'], or by partial match with contains(). Choose attributes that are stable, because position-based paths change when the layout changes.</p></div>
+
+<div class="qa"><h3>6. What is the difference between absolute and relative XPath?</h3><p>Absolute XPath starts at the root, such as /html/body/div[2]/form/input, and copies the full page structure. Any change to that structure, even a new wrapper div, breaks the locator. Relative XPath starts from a matching element anywhere in the page, such as //input[@name='email'], and survives most layout changes, so teams prefer it.</p></div>
+
+<div class="qa"><h3>7. What is a fluent wait in Selenium?</h3><p>FluentWait is an explicit wait where you set a timeout, a polling interval, and the exceptions to ignore while waiting. For example, you can poll every 500 milliseconds for up to 15 seconds and ignore NoSuchElementException until the element appears. It is more flexible than WebDriverWait, which uses fixed defaults.</p></div>
+
+<div class="qa"><h3>8. What is the Page Object Model (POM)?</h3><p>POM represents each page of the application as a class that holds its locators and the actions a user can take on it. Tests call methods such as loginPage.login(user, password) instead of locating elements directly. When the UI changes, you update one class rather than every test that uses that page.</p></div>
+
+<div class="qa"><h3>9. How do you handle dynamic elements in Selenium?</h3><p>Dynamic elements have IDs or classes that change between loads, so match on the stable part instead, using contains() or starts-with(). Combine the locator with an explicit wait for the element to be clickable, rather than adding a fixed sleep. A fixed sleep either wastes time or still fails on a slow run.</p></div>
+
+<div class="qa"><h3>10. How do you handle pop-ups and alerts in Selenium?</h3><p>Switch to a JavaScript alert with driver.switchTo().alert(), then call accept() to press OK, dismiss() to press Cancel, getText() to read the message, or sendKeys() for a prompt. Browser-level pop-ups, such as the download or permission prompts, are outside the WebDriver alert API, so you handle them with browser options or preferences.</p></div>
 
 <a class="cta" href="https://interviewready-ai.bolt.host/">Take the free Selenium quiz →</a>
 <div class="chips"><a class="chip" href="https://tejpalchannel.github.io/interviewready-ai/playwright-interview-questions.html">Playwright Interview Questions and Answers</a><a class="chip" href="https://tejpalchannel.github.io/interviewready-ai/api-testing-interview-questions.html">API Testing Interview Questions and Answers</a><a class="chip" href="https://tejpalchannel.github.io/interviewready-ai/java-interview-questions.html">Java Interview Questions for Automation Testers</a><a class="chip" href="https://tejpalchannel.github.io/interviewready-ai/cypress-interview-questions.html">Cypress Interview Questions and Answers</a></div>
