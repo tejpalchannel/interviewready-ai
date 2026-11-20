@@ -6,6 +6,94 @@
 <title>Top 10 Selenium Interview Questions and Answers (2026) | InterviewReady AI</title>
 <meta name="description" content="The 10 most asked Selenium interview questions with clear answers, covering WebDriver, XPath, waits, the Page Object Model, and alerts."/>
 <link rel="canonical" href="https://tejpalchannel.github.io/interviewready-ai/selenium-interview-questions.html"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Selenium?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Selenium is an open-source tool for automating web browsers, mainly for UI regression testing. It supports Java, Python, C#, JavaScript, and other languages through language bindings. Tests written with Selenium drive a real browser, so they check what a user actually sees and clicks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the components of Selenium?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Selenium has four components. Selenium IDE is a browser extension for record and playback, useful for quick demos but not for maintained suites. Selenium RC is deprecated and replaced by WebDriver. WebDriver is the API that controls the browser, and Selenium Grid runs tests in parallel across multiple machines or browsers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Selenium WebDriver?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "WebDriver is the core of Selenium and the API your test code calls. It opens pages, finds elements, clicks, types, reads text, and manages windows, frames, and alerts. Each browser has its own driver, such as ChromeDriver or GeckoDriver, which translates WebDriver commands into browser actions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between findElement and findElements?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "findElement returns the first matching element and throws NoSuchElementException if nothing matches. findElements returns a list of every match, and an empty list if nothing matches. Use findElements when an element is optional, such as a cookie banner, because checking the list size avoids an exception."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is an XPath?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "XPath is a path expression for locating elements in the HTML document. You can match by attribute, such as //input[@id='username'], by visible text, such as //button[text()='Login'], or by partial match with contains(). Choose attributes that are stable, because position-based paths change when the layout changes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between absolute and relative XPath?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolute XPath starts at the root, such as /html/body/div[2]/form/input, and copies the full page structure. Any change to that structure, even a new wrapper div, breaks the locator. Relative XPath starts from a matching element anywhere in the page, such as //input[@name='email'], and survives most layout changes, so teams prefer it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a fluent wait in Selenium?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FluentWait is an explicit wait where you set a timeout, a polling interval, and the exceptions to ignore while waiting. For example, you can poll every 500 milliseconds for up to 15 seconds and ignore NoSuchElementException until the element appears. It is more flexible than WebDriverWait, which uses fixed defaults."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Page Object Model (POM)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "POM represents each page of the application as a class that holds its locators and the actions a user can take on it. Tests call methods such as loginPage.login(user, password) instead of locating elements directly. When the UI changes, you update one class rather than every test that uses that page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you handle dynamic elements in Selenium?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dynamic elements have IDs or classes that change between loads, so match on the stable part instead, using contains() or starts-with(). Combine the locator with an explicit wait for the element to be clickable, rather than adding a fixed sleep. A fixed sleep either wastes time or still fails on a slow run."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you handle pop-ups and alerts in Selenium?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Switch to a JavaScript alert with driver.switchTo().alert(), then call accept() to press OK, dismiss() to press Cancel, getText() to read the message, or sendKeys() for a prompt. Browser-level pop-ups, such as the download or permission prompts, are outside the WebDriver alert API, so you handle them with browser options or preferences."
+      }
+    }
+  ]
+}
+</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 body{background:#f6f7f9;color:#111827;line-height:1.6}
