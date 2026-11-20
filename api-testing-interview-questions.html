@@ -6,6 +6,94 @@
 <title>Top 10 API Testing Interview Questions and Answers (2026)</title>
 <meta name="description" content="Most asked API testing interview questions with clear answers on HTTP methods, status codes, authentication, PUT vs PATCH, and contract testing."/>
 <link rel="canonical" href="https://tejpalchannel.github.io/interviewready-ai/api-testing-interview-questions.html"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is API testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "API testing checks that an application's interfaces work correctly without going through the user interface. It verifies the request and response, status codes, data accuracy, error handling, performance, and security. Because it skips the UI, it runs faster and fails more clearly than an end-to-end test of the same logic."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between REST and SOAP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "REST uses standard HTTP methods and usually exchanges JSON, so it is lightweight and easy to read. SOAP uses XML messages with a formal contract described by WSDL, and it defines its own security and transaction standards. Most new public APIs are REST, while SOAP is still common in banking and older enterprise systems."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the common HTTP methods?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GET reads a resource and should not change data. POST creates a new resource, and PUT replaces an existing one. PATCH updates only some fields, and DELETE removes a resource. Knowing which methods should be safe or idempotent helps you decide what to retry and what to assert."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a status code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A status code is the server's summary of the result of a request. 2xx means success, 3xx means a redirect, 4xx means the client sent something wrong, and 5xx means the server failed. A test should check the exact code it expects, not just that the response is not an error."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between 200 and 201?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "200 OK means the request succeeded and the response body contains the result. 201 Created means a new resource was created, usually after a POST, and the response often includes a Location header with the new resource's address. Asserting 201 rather than 200 confirms the resource was actually created."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between authentication and authorization?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Authentication confirms who the caller is, for example by checking a password or a token. Authorization decides what that caller is allowed to do, such as whether a regular user can delete another user's record. A good test suite checks both, including the case where a valid user is refused an action they should not have."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a Bearer token?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Bearer token is a credential sent in the Authorization header as Authorization: Bearer followed by the token. The server accepts whoever holds the token, so it must be sent only over HTTPS and kept out of logs. Tokens are often JWTs, which can be checked for expiry and signature."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between PUT and PATCH?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PUT replaces the whole resource, so fields you leave out may be cleared or reset to defaults. PATCH changes only the fields you send and leaves the rest as they are. When testing, send a partial body to PATCH and check that the other fields did not change."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you test an API?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start by reading the specification and listing each endpoint, its inputs, and its expected outputs. Send valid requests and check the status code, response body, headers, and response time. Then send invalid input, missing fields, and wrong credentials, and confirm the API returns clear errors without leaking internal details."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is API contract testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Contract testing checks that the request and response shape agreed between a consumer and a provider still matches. The provider is tested against the consumer's expectations, so a change that would break a client fails the build early. It is useful in microservice systems, where many teams deploy independently."
+      }
+    }
+  ]
+}
+</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 body{background:#f6f7f9;color:#111827;line-height:1.6}
@@ -47,6 +135,9 @@ footer{margin-top:40px;font-size:12px;color:#9ca3af;text-align:center}
 <div class="qa"><h3>10. What is API contract testing?</h3><p>Contract testing checks that the request and response shape agreed between a consumer and a provider still matches. The provider is tested against the consumer's expectations, so a change that would break a client fails the build early. It is useful in microservice systems, where many teams deploy independently.</p></div>
 
 <a class="cta" href="https://interviewready-ai.bolt.host/">Take the free API testing quiz →</a>
+<p class="intro" style="text-align:center;margin-top:24px;margin-bottom:8px;">Create a free account to save your score, track weak topics, and take the full 10-question quiz.</p>
+<a class="cta" href="https://interviewready-ai.bolt.host/">Log in or sign up to save progress →</a>
+
 <div class="chips"><a class="chip" href="https://tejpalchannel.github.io/interviewready-ai/selenium-interview-questions.html">Selenium Interview Questions and Answers</a><a class="chip" href="https://tejpalchannel.github.io/interviewready-ai/playwright-interview-questions.html">Playwright Interview Questions and Answers</a><a class="chip" href="https://tejpalchannel.github.io/interviewready-ai/java-interview-questions.html">Java Interview Questions for Automation Testers</a><a class="chip" href="https://tejpalchannel.github.io/interviewready-ai/cypress-interview-questions.html">Cypress Interview Questions and Answers</a></div>
 <footer>InterviewReady AI — Practice automation testing interview questions free.</footer>
 </div>
