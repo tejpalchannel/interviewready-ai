@@ -4,7 +4,96 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Top 10 Cypress Interview Questions and Answers (2026)</title>
-<meta name="description" content="Most asked Cypress interview questions with clear, short answers. Practice them free in InterviewReady AI."/>
+<meta name="description" content="Most asked Cypress interview questions with clear answers on automatic waiting, cy.intercept, fixtures, custom commands, and time travel."/>
+<link rel="canonical" href="https://tejpalchannel.github.io/interviewready-ai/cypress-interview-questions.html"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Cypress?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cypress is a JavaScript-based end-to-end testing framework that runs directly in the browser, making tests fast and easy to debug. Why it matters in an interview: interviewers ask this to see whether you understand that Cypress runs inside the app's browser, which is why it behaves differently from WebDriver tools."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Cypress different from Selenium?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cypress runs in the same browser as the app (no WebDriver), has automatic waiting, time travel debugging, and is limited to JavaScript. Selenium supports more languages and browsers. Why it matters in an interview: a fair comparison names what Cypress does not support, such as multiple tabs and some cross-origin cases, rather than only its strengths."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between cy.get() and cy.contains()?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "cy.get() finds elements by CSS selector. cy.contains() finds elements by their text content. Why it matters in an interview: choosing text-based selectors where the text is stable makes tests read like user behaviour and survive markup changes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Cypress's automatic waiting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cypress automatically waits for commands and assertions to complete before moving on, so manual sleeps are not needed for most cases. Why it matters in an interview: knowing that Cypress retries assertions, and when it does not, separates a tester who uses it correctly from one who adds waits everywhere."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is cy.intercept()?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "cy.intercept() is used to spy on, stub, or mock network requests and responses in tests. Why it matters in an interview: it lets you test error states, such as a failed API call, without needing the real backend to fail."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a fixture in Cypress?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A fixture is a fixed set of data, such as JSON, loaded with cy.fixture() to use as test input, keeping test data separate from test code. Why it matters in an interview: separating data from logic makes a suite easier to update when the test data changes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between cy.request() and cy.intercept()?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "cy.request() makes an HTTP request directly from the test. cy.intercept() intercepts and controls network requests made by the app. Why it matters in an interview: a common mistake is using cy.request() to test what the UI sends, when cy.intercept() is the right tool."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are Cypress custom commands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Custom commands are reusable functions added to Cypress with Cypress.Commands.add to avoid repeating code, such as a custom login command. Why it matters in an interview: a login command used across many tests is a common example of reducing duplication in a real suite."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between .then() and .should()?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": ".then() lets you work with the yielded value, like a callback. .should() makes an assertion and automatically retries until it passes or times out. Why it matters in an interview: using .should() for checks rather than .then() is what makes Cypress tests stable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Cypress time travel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Time travel shows snapshots of the app at each command step in the Test Runner, letting you see what the app looked like before and after each action. Why it matters in an interview: being able to explain how you debug a failing step with time travel shows practical experience with the tool."
+      }
+    }
+  ]
+}
+</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 body{background:#f6f7f9;color:#111827;line-height:1.6}
@@ -14,7 +103,9 @@ h1{font-size:28px;margin-bottom:12px}
 .qa{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:18px 20px;margin-bottom:14px}
 .qa h3{font-size:16px;margin-bottom:6px}
 .qa p{color:#374151;font-size:14px}
+.why{margin-top:10px;padding:10px 12px;background:#f0fdfa;border-left:3px solid #0d9488;border-radius:6px;color:#134e4a;font-size:14px}
 .cta{display:block;text-align:center;background:#111827;color:#fff;padding:14px;border-radius:10px;text-decoration:none;font-weight:600;margin:28px 0}
+.reason{text-align:center;color:#4b5563;font-size:15px;margin:24px 0 8px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
 .chip{background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:6px 14px;font-size:13px;color:#374151;text-decoration:none}
 footer{margin-top:40px;font-size:12px;color:#9ca3af;text-align:center}
@@ -23,19 +114,32 @@ footer{margin-top:40px;font-size:12px;color:#9ca3af;text-align:center}
 <body>
 <div class="wrap">
 <h1>Top 10 Cypress Interview Questions and Answers (2026)</h1>
-<p class="intro">Most asked Cypress interview questions with clear, short answers. Practice them free in InterviewReady AI.</p>
-<div class="qa"><h3>1. What is Cypress?</h3><p>Cypress is a JavaScript-based end-to-end testing framework that runs directly in the browser, making tests fast and easy to debug.</p></div>
-<div class="qa"><h3>2. How is Cypress different from Selenium?</h3><p>Cypress runs in the same browser as the app (no WebDriver), has automatic waiting, time travel debugging, and is limited to JavaScript. Selenium supports more languages and browsers.</p></div>
-<div class="qa"><h3>3. What is the difference between cy.get() and cy.contains()?</h3><p>cy.get() finds elements by CSS selector. cy.contains() finds elements by their text content.</p></div>
-<div class="qa"><h3>4. What is Cypress&#x27;s automatic waiting?</h3><p>Cypress automatically waits for commands and assertions to complete before moving on — no manual sleeps needed for most cases.</p></div>
-<div class="qa"><h3>5. What is cy.intercept()?</h3><p>cy.intercept() is used to spy, stub, or mock network requests and responses in tests.</p></div>
-<div class="qa"><h3>6. What is a fixture in Cypress?</h3><p>A fixture is a fixed set of data (JSON, etc.) loaded with cy.fixture() to use as test input, keeping test data separate from test code.</p></div>
-<div class="qa"><h3>7. What is the difference between cy.request() and cy.intercept()?</h3><p>cy.request() makes an HTTP request directly from the test. cy.intercept() intercepts and controls network requests made by the app.</p></div>
-<div class="qa"><h3>8. What are Cypress custom commands?</h3><p>Custom commands are reusable functions added to Cypress (Cypress.Commands.add) to avoid repeating code, like a custom login command.</p></div>
-<div class="qa"><h3>9. What is the difference between .then() and .should()?</h3><p>.then() lets you work with the yielded value (like a callback). .should() makes an assertion and automatically retries until it passes or times out.</p></div>
-<div class="qa"><h3>10. What is Cypress time travel?</h3><p>Time travel shows snapshots of the app at each command step in the Test Runner, letting you see what the app looked like before and after each action.</p></div>
+<p class="intro">Cypress is a common choice for front-end and end-to-end testing, and interviewers often ask how it differs from Selenium. These questions cover its core ideas: automatic waiting, network stubbing with cy.intercept, fixtures, custom commands, and time travel debugging. Each answer gives the reasoning behind the feature, so you can explain when and why to use it.</p>
+
+<div class="qa"><h3>1. What is Cypress?</h3><p>Cypress is a JavaScript-based end-to-end testing framework that runs directly in the browser, making tests fast and easy to debug.</p><p class="why"><strong>Why it matters in an interview:</strong> interviewers ask this to see whether you understand that Cypress runs inside the app's browser, which is why it behaves differently from WebDriver tools.</p></div>
+
+<div class="qa"><h3>2. How is Cypress different from Selenium?</h3><p>Cypress runs in the same browser as the app (no WebDriver), has automatic waiting, time travel debugging, and is limited to JavaScript. Selenium supports more languages and browsers.</p><p class="why"><strong>Why it matters in an interview:</strong> a fair comparison names what Cypress does not support, such as multiple tabs and some cross-origin cases, rather than only its strengths.</p></div>
+
+<div class="qa"><h3>3. What is the difference between cy.get() and cy.contains()?</h3><p>cy.get() finds elements by CSS selector. cy.contains() finds elements by their text content.</p><p class="why"><strong>Why it matters in an interview:</strong> choosing text-based selectors where the text is stable makes tests read like user behaviour and survive markup changes.</p></div>
+
+<div class="qa"><h3>4. What is Cypress's automatic waiting?</h3><p>Cypress automatically waits for commands and assertions to complete before moving on, so manual sleeps are not needed for most cases.</p><p class="why"><strong>Why it matters in an interview:</strong> knowing that Cypress retries assertions, and when it does not, separates a tester who uses it correctly from one who adds waits everywhere.</p></div>
+
+<div class="qa"><h3>5. What is cy.intercept()?</h3><p>cy.intercept() is used to spy on, stub, or mock network requests and responses in tests.</p><p class="why"><strong>Why it matters in an interview:</strong> it lets you test error states, such as a failed API call, without needing the real backend to fail.</p></div>
+
+<div class="qa"><h3>6. What is a fixture in Cypress?</h3><p>A fixture is a fixed set of data, such as JSON, loaded with cy.fixture() to use as test input, keeping test data separate from test code.</p><p class="why"><strong>Why it matters in an interview:</strong> separating data from logic makes a suite easier to update when the test data changes.</p></div>
+
+<div class="qa"><h3>7. What is the difference between cy.request() and cy.intercept()?</h3><p>cy.request() makes an HTTP request directly from the test. cy.intercept() intercepts and controls network requests made by the app.</p><p class="why"><strong>Why it matters in an interview:</strong> a common mistake is using cy.request() to test what the UI sends, when cy.intercept() is the right tool.</p></div>
+
+<div class="qa"><h3>8. What are Cypress custom commands?</h3><p>Custom commands are reusable functions added to Cypress with Cypress.Commands.add to avoid repeating code, such as a custom login command.</p><p class="why"><strong>Why it matters in an interview:</strong> a login command used across many tests is a common example of reducing duplication in a real suite.</p></div>
+
+<div class="qa"><h3>9. What is the difference between .then() and .should()?</h3><p>.then() lets you work with the yielded value, like a callback. .should() makes an assertion and automatically retries until it passes or times out.</p><p class="why"><strong>Why it matters in an interview:</strong> using .should() for checks rather than .then() is what makes Cypress tests stable.</p></div>
+
+<div class="qa"><h3>10. What is Cypress time travel?</h3><p>Time travel shows snapshots of the app at each command step in the Test Runner, letting you see what the app looked like before and after each action.</p><p class="why"><strong>Why it matters in an interview:</strong> being able to explain how you debug a failing step with time travel shows practical experience with the tool.</p></div>
 
 <a class="cta" href="https://interviewready-ai.bolt.host/">Take the free Cypress quiz →</a>
+<p class="reason">Create a free account to save your score, track weak topics, and take the full 10-question quiz.</p>
+<a class="cta" href="https://interviewready-ai.bolt.host/">Log in or sign up to save progress →</a>
+
 <div class="chips"><a class="chip" href="https://tejpalchannel.github.io/interviewready-ai/selenium-interview-questions.html">Selenium Interview Questions and Answers</a><a class="chip" href="https://tejpalchannel.github.io/interviewready-ai/playwright-interview-questions.html">Playwright Interview Questions and Answers</a><a class="chip" href="https://tejpalchannel.github.io/interviewready-ai/api-testing-interview-questions.html">API Testing Interview Questions and Answers</a><a class="chip" href="https://tejpalchannel.github.io/interviewready-ai/java-interview-questions.html">Java Interview Questions for Automation Testers</a></div>
 <footer>InterviewReady AI — Practice automation testing interview questions free.</footer>
 </div>
